@@ -8,7 +8,7 @@ This is the preferred way to have it behave for most people, but if you're like 
 Perhaps you want to have Google announce something like: ***“The temperature upstairs has reached 90 degrees Fahrenheit!” **or perhaps** “Someone just placed an order for $53.99 on your e-commerce store!”***
 Sadly, this functionality is not available out of the box with the Google Home, even when you add in IFTTT.
 
-It *is* possible to have your Google Home speak, but it takes a bit of work, as well some kind of home server, such as a Raspberry Pi.  (It needs to be on the same network as your Google Home, so using a cloud server won't work.)  To make this work with IFTTT, the server will need to be accessible from the Internet.
+It *is* possible to have your Google Home speak, but it takes a bit of work, as well some kind of home server, such as a Raspberry Pi, Linux box, or Windows or Mac.  (It needs to be on the same network as your Google Home, so using a cloud server won't work.)  To make this work with IFTTT, the server will need to be accessible from the Internet.
 
 It relies upon [Home Assistant, ](https://home-assistant.io/)the excellent home automation platform that will run on as little as a [$10 Raspberry Pi Zero](https://home-assistant.io/blog/2017/05/01/home-assistant-on-raspberry-pi-zero-in-30-minutes/).  (Installing Home Assistant is outside the scope of this document and well-documented [elsewhere](https://home-assistant.io/blog/2017/05/01/home-assistant-on-raspberry-pi-zero-in-30-minutes/).)
 
