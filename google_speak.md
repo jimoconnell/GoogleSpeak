@@ -78,6 +78,16 @@ It occurred to me that it might be useful to have MQTT as a very flexible and dy
 
 This method would also make it trivial to send messages to an unlimited number of Home Assistant installs, in different locations, on different networks.
 
+Save the following code as a script, use pip to install pahoo-mqtt and requests:
+
+```
+sudo pip install paho-mqtt requests
+```
+
+The script will keep running until you close the session, kill it, or it encounters an error. (Accented characters or other non-standard english will cause it to choke.  Fixing this is a #todo )
+
+(See the section after the script for the mosquitto command for *sending* the message.)
+
 ```
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
@@ -148,3 +158,11 @@ print("rc: "+str(rc))
 
 
 ```
+
+To fire it from the command line, install the 'mosquitto-clients' package and run:
+```
+
+mosquitto_pub -h test.mosquitto.org -t "jimoconnell/googlesay/foo" -m "Hokey Smokes! It worked\!"   
+
+```
+
