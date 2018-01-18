@@ -1,6 +1,6 @@
 # Make Your *Google Home* Speak
 
-This document outlines how to have your Google Home or other Google Cast device speak a string, using [IFTTT](https://ifttt.com/), CURL, or Python.
+This document outlines how to have your Google Home or other Google Cast device speak a string, using [IFTTT](https://ifttt.com/), CURL, MQTT, or Python.
 
 Like a well-behaved child, your [Google Home](https://store.google.com/product/google_home) speaks only when spoken to. 
 This is the preferred way to have it behave for most people, but if you're like me, you want to push its capabilities and have it do things for which it was not designed. 
