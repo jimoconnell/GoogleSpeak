@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3ython
 # -*- coding: utf-8 -*-
 # Modified by @jimoconnell to add Google Say functionality via Home Assistant
 # See: https://gist.github.com/jimoconnell/35d7a23a492ca5499c71b5465c6173df
