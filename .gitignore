@@ -38,3 +38,4 @@ config.bak
 .Trashes
 ehthumbs.db
 Thumbs.db
+.gitignore
