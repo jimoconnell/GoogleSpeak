@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Modified by @jimoconnell to add Google Say functionality via Home Assistant
-# See: https://gist.github.com/jimoconnell/35d7a23a492ca5499c71b5465c6173df
+# See: https://github.com/jimoconnell/GoogleSpeak
 # Original:
 # Copyright (c) 2010-2013 Roger Light <roger@atchoo.org>
 #
@@ -34,20 +34,28 @@ MQTT_TOPIC =  parser.get('config', 'MQTT_Topic')
 
 print("Using server: " + MQTT_SERVER)
 
+def clean_text(text):
+    return ''.join([i if ord(i) < 128 else ' ' for i in text])
+
 def on_connect(mqttc, obj, flags, rc):
     print("Connected to %s:%s" % (mqttc._host, mqttc._port))
 
 def on_message(mqttc, obj, msg: object):
-#    print(msg.topic+" "+str(msg.qos)+" "+str(msg.payload))
     msg.payload = msg.payload.decode("utf-8")
     print(str(msg.payload))
 
     saymsg = str(msg.payload)
+    saymsg = clean_text(saymsg)
     data = "{\"entity_id\": \""+ CAST_DEVICE + "\", \"message\": \"" + saymsg + "\"}"
-    data = "{ \"message\": \"" + saymsg + "\"}"
+
+#   To send to all cast devices that HASS knows about, do not specify a device:
+#    data = "{ \"message\": \"" + saymsg + "\"}"
     r = requests.post(HOMEASSISTANT_URL, data)
+
+
 def on_publish(mqttc, obj, mid):
     print("mid: "+str(mid))
+
 
 def on_subscribe(mqttc, obj, mid, granted_qos):
     print("Subscribed: "+str(mid)+" "+str(granted_qos))
@@ -65,7 +73,7 @@ mqttc.on_connect = on_connect
 mqttc.on_publish = on_publish
 mqttc.on_subscribe = on_subscribe
 # Uncomment to enable debug messages
-mqttc.on_log = on_log
+# mqttc.on_log = on_log
 mqttc.connect_srv(MQTT_SERVER, 60)
 mqttc.subscribe(MQTT_TOPIC, 0)
 

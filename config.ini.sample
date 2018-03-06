@@ -1,0 +1,6 @@
+[config]
+HOMEASSISTANT_URL = http://HASS_URL:8123/api/services/tts/google_say?api_password=HASS_PASSWD
+CAST_DEVICE = media_player.bedroom_speaker 
+CAST_DEVICE_DESCRIPTION = Change the line above to match your device
+MQTT_SERVER = mosquitto.org
+MQTT_TOPIC = jimoconnell/GoogleSpeak
