@@ -14,10 +14,10 @@ It relies upon [Home Assistant, ](https://home-assistant.io/)the excellent home 
 
 In your configuration.yaml file, you enable the following:
 
-`media_player: 
- - platform: cast 
-tts: 
- - platform: google `
+`media_player:` 
+` - platform: cast` 
+`tts:` 
+` - platform: google `
 
 (The Media Player component will discover any Google Homes on your network.  “TTS” is text-to-speech.)
 
