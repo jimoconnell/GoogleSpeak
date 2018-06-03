@@ -26,7 +26,6 @@ from configparser import SafeConfigParser
 
 parser = SafeConfigParser()
 parser.read('config.ini')
-
 HOMEASSISTANT_URL =  parser.get('config', 'HOMEASSISTANT_URL')
 CAST_DEVICE =  parser.get('config', 'CAST_DEVICE')
 MQTT_SERVER =  parser.get('config', 'MQTT_SERVER')

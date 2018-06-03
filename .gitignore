@@ -39,3 +39,5 @@ config.bak
 ehthumbs.db
 Thumbs.db
 .gitignore
+.vscode
+.vscode/settings.json
