@@ -1,5 +1,5 @@
 # Make Your *Google Home* Speak
-
+ 
 This document outlines how to have your Google Home or other Google Cast device speak a string, using [IFTTT](https://ifttt.com/), CURL, MQTT, or Python.
 
 Like a well-behaved child, your [Google Home](https://store.google.com/product/google_home) speaks only when spoken to. 
@@ -19,7 +19,7 @@ In your configuration.yaml file, you enable the following:
 `tts:` 
 ` - platform: google `
 
-(The Media Player component will discover any Google Homes on your network.  “TTS” is text-to-speech.)
+(The Media Player component will discover any Google Homes on your network.  “TTS” is Google text-to-speech.)
 
 Home Assistant also has a RESTful API.  We will use this to do the heavy lifting.
 
@@ -44,7 +44,7 @@ Application/JSON
 ```
 
 ```
-{"entity_id": "media_player.studio_speaker", "message": "Hello World!"}
+{"entity_id": "media_player.studio_speaker", "message": "Hello World!"} 
 ```
 
 ## Via Python
